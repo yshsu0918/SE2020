@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BAG online shopping mall</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <em>{{ current_time }}</em>
+        <table style="width:50%">
+            <td> </td>
+            <td> id </td>
+            <td> name </td>
+            <td> categories </td>
+            <td> stock </td> 
+            <td> price </td>
+            {% for item in items %}
+                <tr>
+                    <td><img src="{{item.img_url}}" width="300" height="300"></td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.categories}}</td>
+                    <td>{{item.stock}}</td>        
+                    <td>{{item.price}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        
+    </body>
+</html>
