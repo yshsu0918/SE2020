@@ -15,3 +15,10 @@ pipenv install django
 進入虛擬環境
 
 ##
+SOA_PROJECT/shoppu/templates/hello_world.html
+這個檔案放的是之後會用到的html template
+他跟一般的html略有不同
+
+
+SE2020/SOA_PROJECT/shoppu/shoppu/urls.py
+決定了網址該對應到哪個views.py中的function
