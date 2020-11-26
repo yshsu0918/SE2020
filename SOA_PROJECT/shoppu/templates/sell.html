@@ -16,8 +16,8 @@
     </head>
     <body>
         <h1>Hello</h1>
-        <em>{{ current_time }}</em>
-        <table style="width:50%">
+        <h2>{{ current_time }}</h2>
+        <table style="width:80%">
             <td> </td>
             <td> id </td>
             <td> name </td>
@@ -32,6 +32,14 @@
                     <td>{{item.categories}}</td>
                     <td>{{item.stock}}</td>        
                     <td>{{item.price}}</td>
+                    <td>
+                        <form action="../ordering" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="item_id" value="{{item.id}}">
+                            <p>Amount</p><input type="number" name="id_{{item.id}}_amount"><br>
+                            <input type="submit" value="buy">
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </table>

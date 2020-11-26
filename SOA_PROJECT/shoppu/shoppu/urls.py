@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include, url
 from django.urls import path
-from BAG.views import hello_world, AAA
+from BAG.views import sell,ordering,Thank
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^hello/$', hello_world),
-    url(r'^AAA/$', AAA),
+    url('sell/', sell),
+    url('ordering', ordering),
+    url('Thank', Thank),
+    
 ]

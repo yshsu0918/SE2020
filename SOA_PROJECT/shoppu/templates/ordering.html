@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BAG online shopping mall</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Thanks for ordering</h1>
+        <h2>item {{order.item_id}}</h2>
+        <h2>amount {{order.amount}}</h2>
+        <h2>price {{order.price}}</h2>
+        <h2>total {{order.total}}</h2>
+
+        
+        <script src="https://www.paypal.com/sdk/js?client-id=AZR7yRU2qMy7GXOAz39Yt6zL_aoyYDoPS6d9RSi1HAYBiNzUTYRKktlBox9R6K5jo1NGaSvkbKMIUakY"></script>
+        <div id="paypal-button-container"></div>
+        <script>
+            paypal.Buttons({
+            createOrder: function(data, actions) {
+                // This function sets up the details of the transaction, including the amount and line item details.
+                return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                    value: '{{order.total}}'
+                    }
+                }]
+                });
+            }
+            }).render('#paypal-button-container');
+        </script>          
+    </body>
+</html>
